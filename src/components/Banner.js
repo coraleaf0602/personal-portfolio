@@ -8,7 +8,7 @@ import TrackVisibility from "react-on-screen";
 export const Banner = () => { 
     const [loopNum, setLoopNum] = useState(0); 
     const [isDeleting, setIsDeleting] = useState(false);
-    const toRotate = [ "Web Developer", "Web Designer", "UI/UX Designer"];
+    const toRotate = [ "Software Developer", "Machine Learning Engineer", "CS Student"];
     const [text, setText] = useState('');
     const [delta, setDelta] = useState(300 - Math.random() * 100);
     const period = 2000; 
@@ -19,6 +19,7 @@ export const Banner = () => {
         },delta)
         return () => { clearInterval(ticker)}
     }, [text])
+    
 
     const tick = () => { 
         let i = loopNum % toRotate.length; 
@@ -40,6 +41,16 @@ export const Banner = () => {
             setDelta(500);
         }
     }
+    const onUpdateActiveLink = (value) => { 
+        if (value === 'connect') {
+            const element = document.getElementById('connect');
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            } else {
+                console.error('Element with id "connect" not found');
+            }
+        }
+    }
 
 
     return ( 
@@ -53,7 +64,7 @@ export const Banner = () => {
                             <span className="tagline"> Welcome to my Portfolio</span>
                             <h1>Hi I'm Cora <span className="wrap">{text}</span></h1> 
                             <p> Self Introduction </p>
-                            <button onClick={() => console.log('connect')}>Let's Connect <ArrowRightCircle size={(25)}></ArrowRightCircle></button>
+                            <button onClick={() => onUpdateActiveLink('connect')}>Let's Connect <ArrowRightCircle size={(25)}></ArrowRightCircle></button>
                             </div> }
                         </TrackVisibility>
                     </Col>

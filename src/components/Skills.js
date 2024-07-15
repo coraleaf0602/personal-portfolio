@@ -1,9 +1,13 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { Container, Col, Row } from "react-bootstrap"; 
-import meter1 from "../assets/img/meter1.svg";
-import meter2 from "../assets/img/meter2.svg";
-import meter3 from "../assets/img/meter3.svg";
+import java from "../assets/img/java.svg";
+import python from "../assets/img/python.svg";
+import c from "../assets/img/c.svg";
+import javascript from "../assets/img/javascript.svg";
+import html from "../assets/img/html.svg";
+import css from "../assets/img/css.svg";
+import react from "../assets/img/react.svg";
 import colourSharp from "../assets/img/color-sharp.png";
 
 export const Skills = () => { 
@@ -34,25 +38,36 @@ export const Skills = () => {
                     <Col> 
                         <div className="skill-bx">
                             <h2>
-                                Skills
+                                Technical Skills
                             </h2>
-                            <p>Quick intro to skills</p>
+                            <p>Here are a few of the languages and frameworks that I know!</p>
                             <Carousel responsive={responsive} infinite={true} className="skill-slider"> 
                                 <div className="item"> 
-                                    <img src={meter1} alt="Image" /> 
-                                    <h5>Software Development</h5>
+                                    <img src={java} alt="Image" /> 
+                                    <h5>Java</h5>
                                 </div>
                                 <div className="item"> 
-                                    <img src={meter2} alt="Image" /> 
-                                    <h5>Brand Identity</h5>
+                                    <img src={python} alt="Image" /> 
+                                    <h5>Python</h5>
                                 </div>
                                 <div className="item"> 
-                                    <img src={meter3} alt="Image" /> 
-                                    <h5>smthing</h5>
+                                    <img src={c} alt="Image" /> 
                                 </div>
                                 <div className="item"> 
-                                    <img src={meter1} alt="Image" /> 
-                                    <h5>something</h5>
+                                    <img src={javascript} alt="Image" /> 
+                                    <h5>JS</h5>
+                                </div>
+                                <div className="item">
+                                    <img src={html} alt="Image" />
+                                    <h5>HTML</h5>
+                                </div>
+                                <div className="item">
+                                    <img src={css} alt="Image" />
+                                    <h5>CSS</h5>
+                                </div>
+                                <div className="item">
+                                    <img src={react} alt="Image" />
+                                    <h5>React</h5>
                                 </div>
                             </Carousel>
                         </div>
