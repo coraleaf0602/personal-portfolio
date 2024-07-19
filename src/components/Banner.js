@@ -63,7 +63,10 @@ export const Banner = () => {
                             <div className={isVisible ? "animated__animated animate__fadeIn" : ""}>
                             <span className="tagline"> Welcome to my Portfolio</span>
                             <h1>Hi I'm Cora <span className="wrap">{text}</span></h1> 
-                            <p> Self Introduction </p>
+                            <p> 
+                            I'm always excited to connect with like-minded individuals and explore new opportunities. Whether you're interested in my work, have a project idea, or just want to chat about tech, feel free to reach out!
+                            Explore my projects, learn more about my skills, and get in touch with me through the contact section of this site.
+                            </p>
                             <button onClick={() => onUpdateActiveLink('connect')}>Let's Connect <ArrowRightCircle size={(25)}></ArrowRightCircle></button>
                             </div> }
                         </TrackVisibility>

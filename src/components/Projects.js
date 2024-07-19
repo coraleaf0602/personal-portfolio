@@ -9,6 +9,9 @@ import flightImg3 from "../assets/img/flight-img3.png";
 import flightImg4 from "../assets/img/flight-img4.png"; 
 import flightImg5 from "../assets/img/flight-img5.png"; 
 import flightImg6 from "../assets/img/flight-img6.png"; 
+import outputPlot from "../assets/img/output.png"; 
+import crossPlot from "../assets/img/cross.png"; 
+import mnistChar from "../assets/img/mnistchar.jpg";
 import spaceInvader1 from "../assets/img/space-invader-img1.png";
 import spaceInvader3 from "../assets/img/space-invader-img3.png";
 import spaceInvader4 from "../assets/img/space-invader-img4.png";
@@ -24,19 +27,19 @@ export const Projects = () => {
   const dell = [
     {
       title: "Business Startup",
-      description: "Design & Development",
+      description: "Python, Flask, SQLite, HTML",
       imgUrl: dellImg1,
       link: "https://github.com/coraleaf0602/SemanticProductLink",
     },
     {
       title: "Business Startup",
-      description: "Design & Development",
+      description: "Python, Flask, SQLite, HTML",
       imgUrl: dellImg2,
       link: "https://github.com/coraleaf0602/SemanticProductLink",
     },
     {
       title: "Business Startup",
-      description: "Design & Development",
+      description: "Python, Flask, SQLite, HTML",
       imgUrl: dellImg3,
       link: "https://github.com/coraleaf0602/SemanticProductLink",
     },
@@ -49,59 +52,80 @@ export const Projects = () => {
   const flightApp = [
     {
       title: "Data Analysis",
-      description: "", 
+      description: "Java, Git, Processing", 
       imgUrl: flightImg1,
       link: "https://github.com/coraleaf0602/flightAnalysisApplication",
     },
     {
       title: "Data Analysis",
-      description: "", 
+      description: "Java, Git, Processing", 
       imgUrl: flightImg2,
       link: "https://github.com/coraleaf0602/flightAnalysisApplication",
     },
     {
       title: "Data Analysis",
-      description: "", 
+      description: "Java, Git, Processing", 
       imgUrl: flightImg3,
       link: "https://github.com/coraleaf0602/flightAnalysisApplication",
     },
     {
       title: "Data Analysis",
-      description: "", 
+      description: "Java, Git, Processing", 
       imgUrl: flightImg4,
       link: "https://github.com/coraleaf0602/flightAnalysisApplication",
     },
     {
       title: "Data Analysis",
-      description: "", 
+      description: "Java, Git, Processing", 
       imgUrl: flightImg5,
       link: "https://github.com/coraleaf0602/flightAnalysisApplication",
     },
     {
       title: "Data Analysis",
-      description: "", 
+      description: "Java, Git, Processing", 
       imgUrl: flightImg6,
       link: "https://github.com/coraleaf0602/flightAnalysisApplication",
     },
 
   ];
 
+  const mnist = [
+    {
+      title: "MNIST Classifier",
+      description: "Python, PyTorch, Torchvision, NumPy, Matplotlib, Pillow", 
+      imgUrl: mnistChar,
+      link: "https://github.com/coraleaf0602/mnist-classifier/",
+    },
+    {
+      title: "MNIST Classifier",
+      description: "Python, PyTorch, Torchvision, NumPy, Matplotlib, Pillow", 
+      imgUrl: outputPlot,
+      link: "https://github.com/coraleaf0602/mnist-classifier/",
+    },
+    {
+      title: "MNIST Classifier",
+      description: "Python, PyTorch, Torchvision, NumPy, Matplotlib, Pillow", 
+      imgUrl: crossPlot,
+      link: "https://github.com/coraleaf0602/mnist-classifier/",
+    },
+  ];
+
   const spaceInvader = [
     {
       title: "Space Invaders",
-      description: "Game Development",
+      description: "Java, Processing",
       imgUrl: spaceInvader1,
       link: "https://github.com/coraleaf0602/space-invaders",
     },
     {
       title: "Space Invaders",
-      description: "Game Development",
+      description: "Java, Processing",
       imgUrl: spaceInvader3,
       link: "https://github.com/coraleaf0602/space-invaders",
     },
     {
       title: "Space Invaders",
-      description: "Game Development",
+      description: "Java, Processing",
       imgUrl: spaceInvader4,
       link: "https://github.com/coraleaf0602/space-invaders",
     },
@@ -110,23 +134,32 @@ export const Projects = () => {
   const pong = [
     {
       title: "Pong",
-      description: "Game Development",
+      description: "Java, Processing",
       imgUrl: pong1,
       link: "https://github.com/coraleaf0602/pong-game",
     },
     {
       title: "Pong",
-      description: "Game Development",
+      description: "Java, Processing",
       imgUrl: pong2,
       link: "https://github.com/coraleaf0602/pong-game",
     },
     {
       title: "Pong",
-      description: "Game Development",
+      description: "Java, Processing",
       imgUrl: pong3,
       link: "https://github.com/coraleaf0602/pong-game",
     },
   ];
+
+  const handleSelect = (eventKey) => {
+    if (eventKey === "first") {
+      window.location.href = "https://github.com/coraleaf0602/SemanticProductLink";
+    }
+    if (eventKey === "second") { 
+      window.location.href = "";
+    }
+  };
 
   return (
     <section className="project" id="projects">
@@ -138,7 +171,7 @@ export const Projects = () => {
               <div className={isVisible ? "animate__animated animate__fadeIn": ""}>
                 <h2>Projects</h2>
                 <p>Feel free to look through my projects on GitHub!</p>
-                <Tab.Container id="projects-tabs" defaultActiveKey="first">
+                <Tab.Container id="projects-tabs" defaultActiveKey="first" onSelect={handleSelect}>
                   <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
                     <Nav.Item>
                       <Nav.Link eventKey="first">Semantic Product Link</Nav.Link>
@@ -147,18 +180,21 @@ export const Projects = () => {
                       <Nav.Link eventKey="second">Cone Detection AI Model</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                      <Nav.Link eventKey="third">Flight Analysis Application</Nav.Link>
+                      <Nav.Link eventKey="third">Flight Analysis App</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                      <Nav.Link eventKey="fourth">Space Invaders</Nav.Link>
+                      <Nav.Link eventKey="fourth">MNIST Classifier</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                      <Nav.Link eventKey="fifth">Pong</Nav.Link>
+                      <Nav.Link eventKey="fifth">Space Invaders</Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item>
+                      <Nav.Link eventKey="sixth">Pong</Nav.Link>
                     </Nav.Item>
                   </Nav>
                   <Tab.Content id="slideInUp" className={isVisible ? "animate__animated animate__slideInUp" : ""}>
                     <Tab.Pane eventKey="first">
-                      <Row>
+                      {/* <Row>
                         {
                           dell.map((project, index) => {
                             return (
@@ -170,14 +206,22 @@ export const Projects = () => {
                             )
                           })
                         }
-                      </Row>
+                      </Row> */}
                     </Tab.Pane>
                     <Tab.Pane eventKey="second">
-                      <Row>
-                        {
-                          
-                        }
-                      </Row>
+                      {/* <Row>
+                          {
+                            formula.map((project, index) => {
+                              return (
+                                <ProjectCard
+                                  key={index}
+                                  {...project}
+                                  onClick={() => window.location.href = project.link}
+                                  />
+                              )
+                            })
+                          }
+                      </Row> */}
                     </Tab.Pane>
                     <Tab.Pane eventKey="third">
                       <Row>
@@ -197,7 +241,7 @@ export const Projects = () => {
                     <Tab.Pane eventKey="fourth">
                       <Row>
                         {
-                          spaceInvader.map((project, index) => {
+                          mnist.map((project, index) => {
                             return (
                               <ProjectCard
                                 key={index}
@@ -210,6 +254,21 @@ export const Projects = () => {
                       </Row>
                     </Tab.Pane>
                     <Tab.Pane eventKey="fifth">
+                      <Row>
+                        {
+                          spaceInvader.map((project, index) => {
+                            return (
+                              <ProjectCard
+                                key={index}
+                                {...project}
+                                onClick={() => window.location.href = project.link}
+                                />
+                            )
+                          })
+                        }
+                      </Row>
+                    </Tab.Pane>
+                    <Tab.Pane eventKey="sixth">
                       <Row>
                         {
                           pong.map((project, index) => {
