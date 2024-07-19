@@ -11,9 +11,10 @@ const app = express();
 app.use(express.static(path.resolve(__dirname, '../build')));
 app.use(cors());
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.get("/contact", (req, res) => {
-  res.json({ message: "Hello from server!"})
+  res.json({ message: "Hello from server!"});
 })
 
 const contactEmail = nodemailer.createTransport({
@@ -32,7 +33,9 @@ contactEmail.verify((error) => {
   }
 });
 
-app.post("/contact", bodyParser.urlencoded({ extended: false }), (req, res) => {
+app.post("/contact", (req, res) => {
+  console.log('Received a contact form submission:', req.body); // Log the request body
+
   const name = req.body.firstName + req.body.lastName;
   const email = req.body.email;
   const message = req.body.message;
@@ -48,8 +51,10 @@ app.post("/contact", bodyParser.urlencoded({ extended: false }), (req, res) => {
   };
   contactEmail.sendMail(mail, (error) => {
     if (error) {
+      console.log('Error sending email:', error); // Log any errors
       res.json(error);
     } else {
+      console.log('Email sent successfully');
       res.json({ code: 200, status: "Message Sent" });
     }
   });
@@ -60,6 +65,5 @@ app.get('*', (req, res) => {
 })
 
 app.listen(PORT, () => { 
-    console.log(`Server is online on port: ${PORT}`)
+    console.log(`Server is online on port: ${PORT}`);
 })
-
