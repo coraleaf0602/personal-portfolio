@@ -156,9 +156,6 @@ export const Projects = () => {
     if (eventKey === "first") {
       window.location.href = "https://github.com/coraleaf0602/SemanticProductLink";
     }
-    if (eventKey === "second") { 
-      window.location.href = "";
-    }
   };
 
   return (
